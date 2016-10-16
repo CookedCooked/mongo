@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%=title%></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="/stylesheets/animate.css" type="text/css"/>
+    <link rel="stylesheet" href="/stylesheets/font-awesome.min.css" type="text/css"/>
+    <link rel="stylesheet" href="/stylesheets/simple-line-icons.css" type="text/css"/>
+    <link rel="stylesheet" href="/stylesheets/font.css" type="text/css"/>
+    <link rel="stylesheet" href="/stylesheets/app.css" type="text/css"/>
+    <script src="/javascripts/jquery-1.12.0.min.js"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <!-- 自己写的css样式 -->
+    <link href="/stylesheets/demo.css" rel="stylesheet"/>
+</head>
+<body>
+<!-- 导航栏 -->
+<nav class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+            <strong id="headerFont">我的第一个微博系统</strong>
+            <!--<span class="glyphicon glyphicon-user"></span><strong>方</strong>-->
+        </a>
+    </div>
+    <div>
+        <div class="navbar-right" id="headerDistance">
+            <%if(user){%>
+            <span><%= user.username %></span>
+            <%}else{%>
+            <a href="/users/loginUI">
+                <button class="btn btn-success">登录
+                    <!-- 添加徽标 -->
+                    <span class="badge"><span class="glyphicon glyphicon-edit"></span></span>
+                </button>
+            </a>
+
+            <%}%>
+            <a href="/users/logout">
+                <button class="btn btn-danger">登出
+                    <!-- 添加徽标 -->
+                    <span class="badge"><span class="glyphicon glyphicon-off"></span></span>
+                </button>
+            </a>
+        </div>
+    </div>
+</nav>
+<!-- 导航结束 -->

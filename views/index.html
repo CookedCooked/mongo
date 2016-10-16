@@ -1,0 +1,57 @@
+<% include header.html %>
+<!-- 生成微博模板 -->
+
+<div class="col-md-8 col-md-offset-2">
+
+    <%for(var i =0;i
+    <blogs.length ;i++){ %>
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <%= blogs[i].title %>
+                <%if(user){%>
+                <a href="/users/del?id=<%= blogs[i]._id %>">
+                    <button class="btn btn-info pull-right del">删除
+                        <!-- 添加徽标 -->
+                        <span class="badge"><span class="glyphicon glyphicon-trash"></span></span>
+                    </button>
+                </a>
+                <%}%>
+            </div>
+            <div class="panel-body">
+                <%= blogs[i].contents %>
+                <blockquote class="pull-right timestyle"><%= blogs[i].auther %>
+                    <small>发表时间:<%= blogs[i].time %></small>
+                </blockquote>
+            </div>
+        </div>
+
+        <% } %>
+        <!--<div class="panel panel-primary">-->
+        <!--<div class="panel-heading">-->
+        <!--说说标题-->
+        <!--<a href="#">-->
+        <!--<button class="btn btn-info pull-right del">删除-->
+        <!--<span class="badge"><span class="glyphicon glyphicon-trash"></span></span>-->
+        <!--</button>-->
+        <!--</a>-->
+        <!--</div>-->
+        <!--<div class="panel-body">-->
+        <!--一年轻男人说女朋友离开他就是因他没钱，周末只能在家里打游戏睡觉。-->
+        <!--<blockquote class="pull-right  timestyle">方哥-->
+        <!--<small>发表时间:2016-04-22 23:33</small>-->
+        <!--</blockquote>-->
+        <!--</div>-->
+        <!--</div>-->
+        <%if(user){%>
+        <div class="pull-right">
+            <a href="/users/addUI">
+                <button class="btn btn-success">添加
+                    <span class="badge"><span class="glyphicon glyphicon-save"></span></span>
+                </button>
+            </a>
+        </div>
+        <%}%>
+</div>
+<!-- 第一个版本不加分页.第二个版本加上分页 -->
+<% include end.html %>

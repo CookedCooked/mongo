@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%=title%></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="/stylesheets/animate.css" type="text/css"/>
+    <link rel="stylesheet" href="/stylesheets/font-awesome.min.css" type="text/css"/>
+    <link rel="stylesheet" href="/stylesheets/simple-line-icons.css" type="text/css"/>
+    <link rel="stylesheet" href="/stylesheets/font.css" type="text/css"/>
+    <link rel="stylesheet" href="/stylesheets/app.css" type="text/css"/>
+    <script src="/javascripts/jquery-1.12.0.min.js"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3">添加微博</h1>
+</div>
+<div class="wrapper-md">
+    <div class="col-sm-6">
+        <form action="/users/add" method="post">
+            <div class="form-group">
+                <label>标题</label>
+                <input type="text" class="form-control" placeholder="输入标题" name="title">
+            </div>
+
+            <div class="form-group">
+                <label>内容</label>
+                <textarea class="form-control" placeholder="输入内容" name="contents" rows="8"></textarea>
+            </div>
+            <button class="btn btn-info">添加</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

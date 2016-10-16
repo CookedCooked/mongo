@@ -5,5 +5,6 @@
 exports.master = {
     host:"localhost",
     port:27017,
-    database:"blog"
+    database:"blog",
+    cookieSecret:"LFAN"
 };

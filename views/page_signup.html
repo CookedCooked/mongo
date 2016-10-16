@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%=title%></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="/stylesheets/animate.css" type="text/css"/>
+    <link rel="stylesheet" href="/stylesheets/font-awesome.min.css" type="text/css"/>
+    <link rel="stylesheet" href="/stylesheets/simple-line-icons.css" type="text/css"/>
+    <link rel="stylesheet" href="/stylesheets/font.css" type="text/css"/>
+    <link rel="stylesheet" href="/stylesheets/app.css" type="text/css"/>
+    <script src="/javascripts/jquery-1.12.0.min.js"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <!-- 自己写的css样式 -->
+    <link href="/stylesheets/demo.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container w-xxl w-auto-xs">
+    <a href class="navbar-brand block m-t"><%= signup %></a>
+    <div class="m-b-lg">
+        <form name="form" class="form-validation" action="/users/signup" method="post">
+            <div class="text-danger wrapper text-center">
+                <!-- 显示错误 -->
+                <%= error %>
+            </div>
+            <div class="list-group list-group-sm">
+                <div class="list-group-item">
+                    <input placeholder="用户名" class="form-control no-border" name="username" required>
+                </div>
+                <div class="list-group-item">
+                    <input type="email" placeholder="邮箱" class="form-control no-border" name="email"
+                           required>
+                </div>
+                <div class="list-group-item">
+                    <input type="password" placeholder="密码" class="form-control no-border"
+                           name="password"  required>
+                </div>
+                <div class="list-group-item">
+                    <input type="password" placeholder="再次输入密码" class="form-control no-border"
+                           name="againpwd"  required>
+                </div>
+            </div>
+            <div class="checkbox m-b-md m-t-none">
+                <label class="i-checks">
+                    <input type="checkbox" ng-model="agree" required><i></i> Agree the <a href>terms and policy</a>
+                </label>
+            </div>
+            <button type="submit" class="btn btn-lg btn-primary btn-block">注册
+            </button>
+            <div class="line line-dashed"></div>
+            <p class="text-center">
+                <small>已经有账号?</small>
+            </p>
+            <a href="/users/loginUI" class="btn btn-lg btn-default btn-block">登录</a>
+        </form>
+    </div>
+</div>
+<% include end.html %>
